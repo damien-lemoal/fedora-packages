@@ -4,14 +4,20 @@
 Name:		dm-zoned-tools
 Version:	2.1.1
 Release:	1%{?dist}
-Summary:	A program to format, check and repair Linux dm-zoned devices
+Summary:	Provides utilities to format, check and repair Linux dm-zoned devices
 
 License:	GPLv3+
 URL:		https://github.com/westerndigitalcorporation/%{name}
 Source0:	https://github.com/westerndigitalcorporation/%{name}/archive/refs/tags/v%{version}.tar.gz
 
-BuildRoot:	%{_topdir}/BUILDROOT/
-BuildRequires:	device-mapper-devel,kmod-devel,libuuid-devel,libblkid-devel,autoconf,autoconf-archive,automake,libtool
+BuildRequires:	device-mapper-devel
+BuildRequires:	kmod-devel
+BuildRequires:	libuuid-devel
+BuildRequires:	libblkid-devel
+BuildRequires:	autoconf
+BuildRequires:	autoconf-archive
+BuildRequires:	automake
+BuildRequires:	libtool
 
 %description
 This package provides the dmzadm utility which can be used to format,
@@ -27,20 +33,17 @@ sh autogen.sh
 %make_build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT
-make install PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT
-chmod -x $RPM_BUILD_ROOT%{_mandir}/man8/*.8
+make install PREFIX=%{_prefix} DESTDIR=%{buildroot}
 
 %ldconfig_scriptlets
 
 %files
 %{_sbindir}/dmzadm
-%{_mandir}/man8/*
+%{_mandir}/man8/dmzadm.*
 
 %license COPYING.GPL
 %doc README.md CONTRIBUTING
 
 %changelog
-* Fri May 21 2021 Damien Le Moal <damien.lemoal@wdc.com> 2.1.1-1
+* Thu May 27 2021 Damien Le Moal <damien.lemoal@wdc.com> 2.1.1-1
 - Version 2.1.1 initial package
