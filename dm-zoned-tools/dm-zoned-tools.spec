@@ -33,7 +33,7 @@ sh autogen.sh
 %make_build
 
 %install
-make install PREFIX=%{_prefix} DESTDIR=%{buildroot}
+%make_install
 
 %ldconfig_scriptlets
 
