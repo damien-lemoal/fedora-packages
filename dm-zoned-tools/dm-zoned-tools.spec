@@ -1,6 +1,3 @@
-# SPDX-License-Identifier: GPL-3.0-or-later
-#
-# Copyright (c) 2020 Western Digital Corporation or its affiliates.
 Name:		dm-zoned-tools
 Version:	2.1.1
 Release:	1%{?dist}
@@ -45,5 +42,5 @@ sh autogen.sh
 %doc README.md CONTRIBUTING
 
 %changelog
-* Thu May 27 2021 Damien Le Moal <damien.lemoal@wdc.com> 2.1.1-1
+* Fri May 28 2021 Damien Le Moal <damien.lemoal@wdc.com> 2.1.1-1
 - Version 2.1.1 initial package
