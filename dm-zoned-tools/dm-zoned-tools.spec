@@ -5,7 +5,7 @@ Summary:	Provides utilities to format, check and repair Linux dm-zoned devices
 
 License:	GPLv3+
 URL:		https://github.com/westerndigitalcorporation/%{name}
-Source0:	https://github.com/westerndigitalcorporation/%{name}/archive/refs/tags/v%{version}.tar.gz
+Source0:	%{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:	device-mapper-devel
 BuildRequires:	kmod-devel
@@ -32,8 +32,6 @@ sh autogen.sh
 %install
 %make_install
 
-%ldconfig_scriptlets
-
 %files
 %{_sbindir}/dmzadm
 %{_mandir}/man8/dmzadm.*
@@ -42,5 +40,5 @@ sh autogen.sh
 %doc README.md CONTRIBUTING
 
 %changelog
-* Fri May 28 2021 Damien Le Moal <damien.lemoal@wdc.com> 2.1.1-1
+* Wed Jun 02 2021 Damien Le Moal <damien.lemoal@wdc.com> 2.1.1-1
 - Version 2.1.1 initial package
