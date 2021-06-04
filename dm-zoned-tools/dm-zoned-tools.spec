@@ -15,6 +15,7 @@ BuildRequires:	autoconf
 BuildRequires:	autoconf-archive
 BuildRequires:	automake
 BuildRequires:	libtool
+BuildRequires:	gcc
 
 %description
 This package provides the dmzadm utility which can be used to format,
@@ -40,5 +41,5 @@ sh autogen.sh
 %doc README.md CONTRIBUTING
 
 %changelog
-* Wed Jun 02 2021 Damien Le Moal <damien.lemoal@wdc.com> 2.1.1-1
+* Fri Jun 04 2021 Damien Le Moal <damien.lemoal@wdc.com> 2.1.1-1
 - Version 2.1.1 initial package
